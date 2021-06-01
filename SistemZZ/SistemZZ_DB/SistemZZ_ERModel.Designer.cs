@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Tamara\source\repos\SistemZZ_GUI\SistemZZ_DB\SistemZZ_ERModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\SistemZZ_ERModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

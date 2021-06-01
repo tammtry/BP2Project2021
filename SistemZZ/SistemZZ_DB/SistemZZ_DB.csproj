@@ -57,6 +57,7 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <None Include="SistemZZ_ERModel.edmx.diagram">
       <DependentUpon>SistemZZ_ERModel.edmx</DependentUpon>
     </None>

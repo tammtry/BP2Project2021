@@ -4,7 +4,32 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d4209d5b8e23481c88b2bcc40f2fac53" Name="Diagram1" />
+      <Diagram DiagramId="d4209d5b8e23481c88b2bcc40f2fac53" Name="Diagram1" >
+        <EntityTypeShape EntityType="SistemZZ_ERModel.SistemZdravstveneZastite" Width="1.5" PointX="6.25" PointY="0.625" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.ZdravstvenaUstanova" Width="1.5" PointX="3.25" PointY="2.25" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.AutonomnaPokrajina" Width="1.5" PointX="3.25" PointY="8.125" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.DomZdravlja" Width="1.5" PointX="6.375" PointY="3.5" />
+        <AssociationConnector Association="SistemZZ_ERModel.Sastoji" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.Prevoz" Width="1.5" PointX="9.875" PointY="2.375" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.SanitetskiPrevoz" Width="1.5" PointX="8.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.DijalizaPrevoz" Width="1.5" PointX="10.875" PointY="5.5" />
+        <InheritanceConnector EntityType="SistemZZ_ERModel.SanitetskiPrevoz" />
+        <InheritanceConnector EntityType="SistemZZ_ERModel.DijalizaPrevoz" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.UstanovaAP" Width="1.5" PointX="3.25" PointY="5.5" />
+        <AssociationConnector Association="SistemZZ_ERModel.Osnovana" />
+        <AssociationConnector Association="SistemZZ_ERModel.Osniva" />
+        <AssociationConnector Association="SistemZZ_ERModel.Upravlja" />
+        <AssociationConnector Association="SistemZZ_ERModel.Vrsi" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SistemZZ_ERModel.ZdravstenaZastita" Width="1.5" PointX="6.25" PointY="8.125" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.ZdravstveniRadnik" Width="1.5" PointX="9.625" PointY="8" />
+        <AssociationConnector Association="SistemZZ_ERModel.Obezbedjuje" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.Doktor" Width="1.5" PointX="8.375" PointY="11.5" />
+        <EntityTypeShape EntityType="SistemZZ_ERModel.MedicinskaSestra" Width="1.5" PointX="10.75" PointY="11.5" />
+        <InheritanceConnector EntityType="SistemZZ_ERModel.Doktor" />
+        <InheritanceConnector EntityType="SistemZZ_ERModel.MedicinskaSestra" />
+        <AssociationConnector Association="SistemZZ_ERModel.Pruza" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
