@@ -137,6 +137,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Programmability\Procedures\NazivLengthDESC.sql" />
     <Content Include="SistemZZ_ERModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SistemZZ_ERModel.Context.cs</LastGenOutput>
@@ -149,6 +150,8 @@
       <DependentUpon>SistemZZ_ERModel.edmx</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Programmability\Functions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
