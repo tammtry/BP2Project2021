@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SistemZZ_GUI.Views"
         mc:Ignorable="d"
-        Title="HomeView" Height="440.337" Width="678.528">
-    <Grid Background="SeaShell" Margin="0,0,68,21">
+        Title="HomeView" Height="436.196" Width="590.184">
+    <Grid Background="PaleTurquoise" Margin="0,0,2,2">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="150"></RowDefinition>
@@ -23,10 +23,10 @@
             <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Sistemi Zdravstvene Zastite" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="5" Grid.Row="0" Margin="118,30,106,10" HorizontalAlignment="Center" Width="526"></TextBlock>
-        <Button Background="LightCoral" Content="SZZ" FontSize="22" FontWeight="Bold" Grid.Column="0" Grid.Row="1" Margin="10" Cursor="Hand"
+        <TextBlock Text="World Healthcare Systems" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="5" Grid.Row="0" Margin="118,30,106,10" HorizontalAlignment="Center" Width="526"></TextBlock>
+        <Button Background="NavajoWhite" Content="SZZ" FontSize="22" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="10" Cursor="Hand"
                 Command="{Binding ViewSZZCommand}"/>
-        <Button Background="LightCoral" Content="ZU" FontSize="22" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="10" Cursor="Hand"
+        <Button Background="NavajoWhite" Content="ZU" FontSize="22" FontWeight="Bold" Grid.Column="2" Grid.Row="1" Margin="10" Cursor="Hand"
                 Command="{Binding ViewZUCommand}"/>
 
     </Grid>

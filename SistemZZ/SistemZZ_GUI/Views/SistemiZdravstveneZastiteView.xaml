@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="SistemiZdravstveneZastiteView" Height="450" Width="800">
     <Grid>
-        <Grid Background="Aquamarine" Margin="0,0,0,-29">
+        <Grid Background="PaleTurquoise" Margin="0,0,0,-29">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="80"></RowDefinition>
@@ -19,21 +19,21 @@
                 <ColumnDefinition Width="250"></ColumnDefinition>
                 <ColumnDefinition Width="250"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Pregled SZZ" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"></TextBlock>
-            <Button Grid.Row="1" Grid.Column="0" Margin="10" Content="Add" FontSize="30" FontWeight="Bold" Cursor="Hand"
+            <TextBlock Text="Sistemi Zdravstvene Zastite" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="229,30,137,10"></TextBlock>
+            <Button Grid.Row="1" Grid.Column="0" Margin="10,10,122,10" Content="Add" FontSize="30" FontWeight="Bold" Cursor="Hand"
                  Command="{Binding AddSZZCommand}"></Button>
-            <Button Grid.Row="1" Grid.Column="1" Margin="10" Content="Edit" FontSize="30" FontWeight="Bold" Cursor="Hand"
-                 Command="{Binding EditSZZCommand}"></Button>
-            <Button Grid.Row="2" Grid.Column="0" Margin="10" Content="Delete" FontSize="30" FontWeight="Bold" Cursor="Hand"
+            <Button Grid.Row="3" Margin="10,10,122,141" Content="Edit" FontSize="30" FontWeight="Bold" Cursor="Hand"
+                 Command="{Binding EditSZZCommand}"/>
+            <Button Grid.Row="2" Grid.Column="0" Margin="10,10,122,10" Content="Delete" FontSize="30" FontWeight="Bold" Cursor="Hand"
                  Command="{Binding DeleteSZZCommand}"></Button>
-            <Button Grid.Row="2" Grid.Column="1" Margin="10" Content="Refresh" FontSize="30" FontWeight="Bold" Cursor="Hand"
-                 Command="{Binding RefreshSZZCommand}"></Button>
+            <Button Grid.Row="3" Margin="184,70,156,96" Content="Refresh" FontSize="30" FontWeight="Bold" Cursor="Hand"
+                 Command="{Binding RefreshSZZCommand}" Grid.ColumnSpan="2" Grid.Column="1"/>
 
-            <DataGrid Grid.Row="3" Grid.ColumnSpan="2" Margin="15,21,10,33" 
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="3" Margin="229,23,137,184" 
                   Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" 
                   SelectionMode="Single" AutoGenerateColumns="False"
                   ItemsSource="{Binding SistemiZdravstveneZastite, UpdateSourceTrigger=PropertyChanged}"   
-                  SelectedItem="{Binding SelectedSZZ}" RenderTransformOrigin="0.684,0.571">
+                  SelectedItem="{Binding SelectedSZZ}" RenderTransformOrigin="0.684,0.571" Grid.RowSpan="3">
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Width="50" Binding="{Binding ID_SZZ}"></DataGridTextColumn>
