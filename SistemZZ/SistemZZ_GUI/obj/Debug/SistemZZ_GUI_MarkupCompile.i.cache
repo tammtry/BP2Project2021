@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_GUI\App.xaml
-11151548125
+5774418211
 
-11-307424790
-141205972301
-MainWindow.xaml;
+21-397486020
+1261128830652
+Views\AddEditSistemiZdravstveneZastiteView.xaml;Views\AddEditZdravstvenaUstanovaView.xaml;Views\HomeView.xaml;Views\SistemiZdravstveneZastiteView.xaml;Views\ZdravstvenaUstanovaView.xaml;
 
-True
+False
 

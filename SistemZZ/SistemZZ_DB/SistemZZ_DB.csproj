@@ -53,9 +53,10 @@
     <Compile Include="AutonomnaPokrajina.cs">
       <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAO\BaseRepository.cs" />
-    <Compile Include="DAO\IRepository.cs" />
-    <Compile Include="DAO\SistemDAO.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IRepository.cs" />
+    <Compile Include="Core\Repositories\ISistemZdravstveneZastiteRepository.cs" />
+    <Compile Include="Core\Repositories\IZdravstvenaUstanovaRepository.cs" />
     <Compile Include="DijalizaPrevoz.cs">
       <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
     </Compile>
@@ -68,6 +69,10 @@
     <Compile Include="MedicinskaSestra.cs">
       <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Persistance\Repositories\Repository.cs" />
+    <Compile Include="Persistance\Repositories\SistemZdravstveneZastiteRepository.cs" />
+    <Compile Include="Persistance\Repositories\ZdravstvenaUstanovaRepository.cs" />
+    <Compile Include="Persistance\UnitOfWork.cs" />
     <Compile Include="Prevoz.cs">
       <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
     </Compile>
@@ -144,5 +149,6 @@
       <DependentUpon>SistemZZ_ERModel.edmx</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
