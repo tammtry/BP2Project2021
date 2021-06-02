@@ -1,0 +1,5 @@
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_GUI\obj\Debug\SistemZZ_GUI.csprojAssemblyReference.cache
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_GUI\obj\Debug\MainWindow.g.cs
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_GUI\obj\Debug\App.g.cs
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_GUI\obj\Debug\SistemZZ_GUI_MarkupCompile.cache
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_GUI\obj\Debug\SistemZZ_GUI_MarkupCompile.lref

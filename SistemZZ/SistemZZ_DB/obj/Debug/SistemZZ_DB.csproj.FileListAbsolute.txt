@@ -1,0 +1,12 @@
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\bin\Debug\SistemZZ_DB.dll.config
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\bin\Debug\SistemZZ_DB.dll
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\bin\Debug\SistemZZ_DB.pdb
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\bin\Debug\EntityFramework.dll
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\bin\Debug\EntityFramework.xml
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\obj\Debug\SistemZZ_DB.csprojAssemblyReference.cache
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\obj\Debug\SistemZZ_DB.csproj.CoreCompileInputs.cache
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\obj\Debug\SistemZZ_DB.csproj.CopyComplete
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\obj\Debug\SistemZZ_DB.dll
+C:\Users\Tamara\Desktop\GitHub\BP2Project2021\SistemZZ\SistemZZ_DB\obj\Debug\SistemZZ_DB.pdb

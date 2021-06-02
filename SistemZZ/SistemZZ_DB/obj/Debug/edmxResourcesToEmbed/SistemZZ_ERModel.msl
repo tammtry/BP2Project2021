@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SistemZZ_ERModelStoreContainer" CdmEntityContainer="SistemZZ_ERModelContainer">
+    <EntitySetMapping Name="SistemZdravstveneZastite">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.SistemZdravstveneZastite)">
+        <MappingFragment StoreEntitySet="SistemZdravstveneZastite">
+          <ScalarProperty Name="ID_SZZ" ColumnName="ID_SZZ" />
+          <ScalarProperty Name="NazivSZZ" ColumnName="NazivSZZ" />
+          <ScalarProperty Name="DrzavaSZZ" ColumnName="DrzavaSZZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZdravstvenaUstanova">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.ZdravstvenaUstanova)">
+        <MappingFragment StoreEntitySet="ZdravstvenaUstanova">
+          <ScalarProperty Name="ID_ZU" ColumnName="ID_ZU" />
+          <ScalarProperty Name="NazivZU" ColumnName="NazivZU" />
+          <ScalarProperty Name="AdresaZU" ColumnName="AdresaZU" />
+          <ScalarProperty Name="BrTelZU" ColumnName="BrTelZU" />
+          <ScalarProperty Name="SistemZdravstveneZastiteID_SZZ" ColumnName="SistemZdravstveneZastiteID_SZZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutonomnaPokrajina">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.AutonomnaPokrajina)">
+        <MappingFragment StoreEntitySet="AutonomnaPokrajina">
+          <ScalarProperty Name="ID_AP" ColumnName="ID_AP" />
+          <ScalarProperty Name="NazivAP" ColumnName="NazivAP" />
+          <ScalarProperty Name="PredsAP" ColumnName="PredsAP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DomZdravlja">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.DomZdravlja)">
+        <MappingFragment StoreEntitySet="DomZdravlja">
+          <ScalarProperty Name="ID_DZ" ColumnName="ID_DZ" />
+          <ScalarProperty Name="AdresaDZ" ColumnName="AdresaDZ" />
+          <ScalarProperty Name="BrTelDZ" ColumnName="BrTelDZ" />
+          <ScalarProperty Name="BrZap" ColumnName="BrZap" />
+          <ScalarProperty Name="DirDZ" ColumnName="DirDZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prevoz">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.Prevoz)">
+        <MappingFragment StoreEntitySet="Prevoz">
+          <ScalarProperty Name="ID_V" ColumnName="ID_V" />
+          <ScalarProperty Name="ImeVozaca" ColumnName="ImeVozaca" />
+          <ScalarProperty Name="MarkaVoz" ColumnName="MarkaVoz" />
+          <ScalarProperty Name="BrMesta" ColumnName="BrMesta" />
+          <ScalarProperty Name="TipPrevoza" ColumnName="TipPrevoza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.SanitetskiPrevoz)">
+        <MappingFragment StoreEntitySet="Prevoz_SanitetskiPrevoz">
+          <ScalarProperty Name="ID_V" ColumnName="ID_V" />
+          <ScalarProperty Name="SifraKreveta" ColumnName="SifraKreveta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.DijalizaPrevoz)">
+        <MappingFragment StoreEntitySet="Prevoz_DijalizaPrevoz">
+          <ScalarProperty Name="ID_V" ColumnName="ID_V" />
+          <ScalarProperty Name="SifraKolica" ColumnName="SifraKolica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UstanovaAP">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.UstanovaAP)">
+        <MappingFragment StoreEntitySet="UstanovaAP">
+          <ScalarProperty Name="ZdravstvenaUstanovaID_ZU" ColumnName="ZdravstvenaUstanovaID_ZU" />
+          <ScalarProperty Name="AutonomnaPokrajinaID_AP" ColumnName="AutonomnaPokrajinaID_AP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZdravstenaZastita">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.ZdravstenaZastita)">
+        <MappingFragment StoreEntitySet="ZdravstenaZastita">
+          <ScalarProperty Name="ID_ZZ" ColumnName="ID_ZZ" />
+          <ScalarProperty Name="TipZastite" ColumnName="TipZastite" />
+          <ScalarProperty Name="DrMed" ColumnName="DrMed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZdravstveniRadnik">
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.ZdravstveniRadnik)">
+        <MappingFragment StoreEntitySet="ZdravstveniRadnik">
+          <ScalarProperty Name="ID_ZR" ColumnName="ID_ZR" />
+          <ScalarProperty Name="TipZR" ColumnName="TipZR" />
+          <ScalarProperty Name="ImeZR" ColumnName="ImeZR" />
+          <ScalarProperty Name="PrezimeZR" ColumnName="PrezimeZR" />
+          <ScalarProperty Name="GodZR" ColumnName="GodZR" />
+          <ScalarProperty Name="OdeljenjeZR" ColumnName="OdeljenjeZR" />
+          <ScalarProperty Name="TelZR" ColumnName="TelZR" />
+          <ScalarProperty Name="GodZapos" ColumnName="GodZapos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.Doktor)">
+        <MappingFragment StoreEntitySet="ZdravstveniRadnik_Doktor">
+          <ScalarProperty Name="ID_ZR" ColumnName="ID_ZR" />
+          <ScalarProperty Name="SpecDR" ColumnName="SpecDR" />
+          <ScalarProperty Name="GodDR" ColumnName="GodDR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(SistemZZ_ERModel.MedicinskaSestra)">
+        <MappingFragment StoreEntitySet="ZdravstveniRadnik_MedicinskaSestra">
+          <ScalarProperty Name="ID_ZR" ColumnName="ID_ZR" />
+          <ScalarProperty Name="GodMS" ColumnName="GodMS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Upravlja" TypeName="SistemZZ_ERModel.Upravlja" StoreEntitySet="DomZdravlja">
+      <EndProperty Name="UstanovaAP">
+        <ScalarProperty Name="ZdravstvenaUstanovaID_ZU" ColumnName="UstanovaAP_ZdravstvenaUstanovaID_ZU" />
+        <ScalarProperty Name="AutonomnaPokrajinaID_AP" ColumnName="UstanovaAP_AutonomnaPokrajinaID_AP" />
+      </EndProperty>
+      <EndProperty Name="DomZdravlja">
+        <ScalarProperty Name="ID_DZ" ColumnName="ID_DZ" />
+      </EndProperty>
+      <Condition ColumnName="UstanovaAP_ZdravstvenaUstanovaID_ZU" IsNull="false" />
+      <Condition ColumnName="UstanovaAP_AutonomnaPokrajinaID_AP" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Vrsi" TypeName="SistemZZ_ERModel.Vrsi" StoreEntitySet="Vrsi">
+      <EndProperty Name="DomZdravlja">
+        <ScalarProperty Name="ID_DZ" ColumnName="DomZdravlja_ID_DZ" />
+      </EndProperty>
+      <EndProperty Name="Prevoz">
+        <ScalarProperty Name="ID_V" ColumnName="Prevoz_ID_V" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Obezbedjuje" TypeName="SistemZZ_ERModel.Obezbedjuje" StoreEntitySet="Obezbedjuje">
+      <EndProperty Name="ZdravstenaZastita">
+        <ScalarProperty Name="ID_ZZ" ColumnName="ZdravstenaZastita_ID_ZZ" />
+      </EndProperty>
+      <EndProperty Name="DomZdravlja">
+        <ScalarProperty Name="ID_DZ" ColumnName="DomZdravlja_ID_DZ" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Pruza" TypeName="SistemZZ_ERModel.Pruza" StoreEntitySet="Pruza">
+      <EndProperty Name="ZdravstveniRadnik">
+        <ScalarProperty Name="ID_ZR" ColumnName="ZdravstveniRadnik_ID_ZR" />
+      </EndProperty>
+      <EndProperty Name="ZdravstenaZastita">
+        <ScalarProperty Name="ID_ZZ" ColumnName="ZdravstenaZastita_ID_ZZ" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

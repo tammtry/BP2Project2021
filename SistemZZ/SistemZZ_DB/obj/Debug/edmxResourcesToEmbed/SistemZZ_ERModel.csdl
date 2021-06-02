@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SistemZZ_ERModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="SistemZZ_ERModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SistemZdravstveneZastite" EntityType="SistemZZ_ERModel.SistemZdravstveneZastite" />
+    <EntitySet Name="ZdravstvenaUstanova" EntityType="SistemZZ_ERModel.ZdravstvenaUstanova" />
+    <EntitySet Name="AutonomnaPokrajina" EntityType="SistemZZ_ERModel.AutonomnaPokrajina" />
+    <EntitySet Name="DomZdravlja" EntityType="SistemZZ_ERModel.DomZdravlja" />
+    <AssociationSet Name="Sastoji" Association="SistemZZ_ERModel.Sastoji">
+      <End Role="SistemZdravstveneZastite" EntitySet="SistemZdravstveneZastite" />
+      <End Role="ZdravstvenaUstanova" EntitySet="ZdravstvenaUstanova" />
+    </AssociationSet>
+    <EntitySet Name="Prevoz" EntityType="SistemZZ_ERModel.Prevoz" />
+    <EntitySet Name="UstanovaAP" EntityType="SistemZZ_ERModel.UstanovaAP" />
+    <AssociationSet Name="UstanovaAPZdravstvenaUstanova" Association="SistemZZ_ERModel.Osnovana">
+      <End Role="UstanovaAP" EntitySet="UstanovaAP" />
+      <End Role="ZdravstvenaUstanova" EntitySet="ZdravstvenaUstanova" />
+    </AssociationSet>
+    <AssociationSet Name="AutonomnaPokrajinaUstanovaAP" Association="SistemZZ_ERModel.Osniva">
+      <End Role="AutonomnaPokrajina" EntitySet="AutonomnaPokrajina" />
+      <End Role="UstanovaAP" EntitySet="UstanovaAP" />
+    </AssociationSet>
+    <AssociationSet Name="Upravlja" Association="SistemZZ_ERModel.Upravlja">
+      <End Role="DomZdravlja" EntitySet="DomZdravlja" />
+      <End Role="UstanovaAP" EntitySet="UstanovaAP" />
+    </AssociationSet>
+    <AssociationSet Name="Vrsi" Association="SistemZZ_ERModel.Vrsi">
+      <End Role="DomZdravlja" EntitySet="DomZdravlja" />
+      <End Role="Prevoz" EntitySet="Prevoz" />
+    </AssociationSet>
+    <EntitySet Name="ZdravstenaZastita" EntityType="SistemZZ_ERModel.ZdravstenaZastita" />
+    <EntitySet Name="ZdravstveniRadnik" EntityType="SistemZZ_ERModel.ZdravstveniRadnik" />
+    <AssociationSet Name="Obezbedjuje" Association="SistemZZ_ERModel.Obezbedjuje">
+      <End Role="ZdravstenaZastita" EntitySet="ZdravstenaZastita" />
+      <End Role="DomZdravlja" EntitySet="DomZdravlja" />
+    </AssociationSet>
+    <AssociationSet Name="Pruza" Association="SistemZZ_ERModel.Pruza">
+      <End Role="ZdravstveniRadnik" EntitySet="ZdravstveniRadnik" />
+      <End Role="ZdravstenaZastita" EntitySet="ZdravstenaZastita" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SistemZdravstveneZastite">
+    <Key>
+      <PropertyRef Name="ID_SZZ" />
+    </Key>
+    <Property Name="ID_SZZ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivSZZ" Type="String" Nullable="false" />
+    <Property Name="DrzavaSZZ" Type="String" Nullable="false" />
+    <NavigationProperty Name="ZdravstvenaUstanovas" Relationship="SistemZZ_ERModel.Sastoji" FromRole="SistemZdravstveneZastite" ToRole="ZdravstvenaUstanova" />
+  </EntityType>
+  <EntityType Name="ZdravstvenaUstanova">
+    <Key>
+      <PropertyRef Name="ID_ZU" />
+    </Key>
+    <Property Name="ID_ZU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivZU" Type="String" Nullable="false" />
+    <Property Name="AdresaZU" Type="String" Nullable="false" />
+    <Property Name="BrTelZU" Type="String" Nullable="false" />
+    <NavigationProperty Name="SistemZdravstveneZastite" Relationship="SistemZZ_ERModel.Sastoji" FromRole="ZdravstvenaUstanova" ToRole="SistemZdravstveneZastite" />
+    <Property Name="SistemZdravstveneZastiteID_SZZ" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UstanovaAP" Relationship="SistemZZ_ERModel.Osnovana" FromRole="ZdravstvenaUstanova" ToRole="UstanovaAP" />
+  </EntityType>
+  <EntityType Name="AutonomnaPokrajina">
+    <Key>
+      <PropertyRef Name="ID_AP" />
+    </Key>
+    <Property Name="ID_AP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivAP" Type="String" Nullable="false" />
+    <Property Name="PredsAP" Type="String" Nullable="false" />
+    <NavigationProperty Name="UstanovaAP" Relationship="SistemZZ_ERModel.Osniva" FromRole="AutonomnaPokrajina" ToRole="UstanovaAP" />
+  </EntityType>
+  <EntityType Name="DomZdravlja">
+    <Key>
+      <PropertyRef Name="ID_DZ" />
+    </Key>
+    <Property Name="ID_DZ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdresaDZ" Type="String" Nullable="false" />
+    <Property Name="BrTelDZ" Type="String" Nullable="false" />
+    <Property Name="BrZap" Type="String" Nullable="false" />
+    <Property Name="DirDZ" Type="String" Nullable="false" />
+    <NavigationProperty Name="UstanovaAP" Relationship="SistemZZ_ERModel.Upravlja" FromRole="DomZdravlja" ToRole="UstanovaAP" />
+    <NavigationProperty Name="Prevoz" Relationship="SistemZZ_ERModel.Vrsi" FromRole="DomZdravlja" ToRole="Prevoz" />
+    <NavigationProperty Name="ZdravstenaZastita" Relationship="SistemZZ_ERModel.Obezbedjuje" FromRole="DomZdravlja" ToRole="ZdravstenaZastita" />
+  </EntityType>
+  <Association Name="Sastoji">
+    <End Type="SistemZZ_ERModel.SistemZdravstveneZastite" Role="SistemZdravstveneZastite" Multiplicity="1" />
+    <End Type="SistemZZ_ERModel.ZdravstvenaUstanova" Role="ZdravstvenaUstanova" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SistemZdravstveneZastite">
+        <PropertyRef Name="ID_SZZ" />
+      </Principal>
+      <Dependent Role="ZdravstvenaUstanova">
+        <PropertyRef Name="SistemZdravstveneZastiteID_SZZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Prevoz">
+    <Key>
+      <PropertyRef Name="ID_V" />
+    </Key>
+    <Property Name="ID_V" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImeVozaca" Type="String" Nullable="false" />
+    <Property Name="MarkaVoz" Type="String" Nullable="false" />
+    <Property Name="BrMesta" Type="String" Nullable="false" />
+    <NavigationProperty Name="DomZdravlja" Relationship="SistemZZ_ERModel.Vrsi" FromRole="Prevoz" ToRole="DomZdravlja" />
+    <Property Name="TipPrevoza" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SanitetskiPrevoz" BaseType="SistemZZ_ERModel.Prevoz">
+    <Property Name="SifraKreveta" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DijalizaPrevoz" BaseType="SistemZZ_ERModel.Prevoz">
+    <Property Name="SifraKolica" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UstanovaAP">
+    <Key>
+      <PropertyRef Name="ZdravstvenaUstanovaID_ZU" />
+      <PropertyRef Name="AutonomnaPokrajinaID_AP" />
+    </Key>
+    <NavigationProperty Name="ZdravstvenaUstanova" Relationship="SistemZZ_ERModel.Osnovana" FromRole="UstanovaAP" ToRole="ZdravstvenaUstanova" />
+    <Property Name="ZdravstvenaUstanovaID_ZU" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AutonomnaPokrajina" Relationship="SistemZZ_ERModel.Osniva" FromRole="UstanovaAP" ToRole="AutonomnaPokrajina" />
+    <Property Name="AutonomnaPokrajinaID_AP" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DomZdravlja" Relationship="SistemZZ_ERModel.Upravlja" FromRole="UstanovaAP" ToRole="DomZdravlja" />
+  </EntityType>
+  <Association Name="Osnovana">
+    <End Type="SistemZZ_ERModel.UstanovaAP" Role="UstanovaAP" Multiplicity="*" />
+    <End Type="SistemZZ_ERModel.ZdravstvenaUstanova" Role="ZdravstvenaUstanova" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ZdravstvenaUstanova">
+        <PropertyRef Name="ID_ZU" />
+      </Principal>
+      <Dependent Role="UstanovaAP">
+        <PropertyRef Name="ZdravstvenaUstanovaID_ZU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Osniva">
+    <End Type="SistemZZ_ERModel.AutonomnaPokrajina" Role="AutonomnaPokrajina" Multiplicity="1" />
+    <End Type="SistemZZ_ERModel.UstanovaAP" Role="UstanovaAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AutonomnaPokrajina">
+        <PropertyRef Name="ID_AP" />
+      </Principal>
+      <Dependent Role="UstanovaAP">
+        <PropertyRef Name="AutonomnaPokrajinaID_AP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Upravlja">
+    <End Type="SistemZZ_ERModel.DomZdravlja" Role="DomZdravlja" Multiplicity="*" />
+    <End Type="SistemZZ_ERModel.UstanovaAP" Role="UstanovaAP" Multiplicity="0..1" />
+  </Association>
+  <Association Name="Vrsi">
+    <End Type="SistemZZ_ERModel.DomZdravlja" Role="DomZdravlja" Multiplicity="*" />
+    <End Type="SistemZZ_ERModel.Prevoz" Role="Prevoz" Multiplicity="*" />
+  </Association>
+  <EntityType Name="ZdravstenaZastita">
+    <Key>
+      <PropertyRef Name="ID_ZZ" />
+    </Key>
+    <Property Name="ID_ZZ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipZastite" Type="String" Nullable="false" />
+    <Property Name="DrMed" Type="String" Nullable="false" />
+    <NavigationProperty Name="DomZdravlja" Relationship="SistemZZ_ERModel.Obezbedjuje" FromRole="ZdravstenaZastita" ToRole="DomZdravlja" />
+    <NavigationProperty Name="ZdravstveniRadnik" Relationship="SistemZZ_ERModel.Pruza" FromRole="ZdravstenaZastita" ToRole="ZdravstveniRadnik" />
+  </EntityType>
+  <EnumType Name="TipZastite">
+    <Member Name="Deca" />
+    <Member Name="Odrasli" />
+  </EnumType>
+  <EntityType Name="ZdravstveniRadnik">
+    <Key>
+      <PropertyRef Name="ID_ZR" />
+    </Key>
+    <Property Name="ID_ZR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipZR" Type="String" Nullable="false" />
+    <Property Name="ImeZR" Type="String" Nullable="false" />
+    <Property Name="PrezimeZR" Type="String" Nullable="false" />
+    <Property Name="GodZR" Type="String" Nullable="false" />
+    <Property Name="OdeljenjeZR" Type="String" Nullable="false" />
+    <Property Name="TelZR" Type="String" Nullable="false" />
+    <Property Name="GodZapos" Type="String" Nullable="false" />
+    <NavigationProperty Name="ZdravstenaZastita" Relationship="SistemZZ_ERModel.Pruza" FromRole="ZdravstveniRadnik" ToRole="ZdravstenaZastita" />
+  </EntityType>
+  <EnumType Name="TipPrevoza">
+    <Member Name="SanitetskiPrevoz" />
+    <Member Name="DijalizaPrevoz" />
+  </EnumType>
+  <EnumType Name="TipZr">
+    <Member Name="Doktor" />
+    <Member Name="MedicinskaSestra" />
+  </EnumType>
+  <Association Name="Obezbedjuje">
+    <End Type="SistemZZ_ERModel.ZdravstenaZastita" Role="ZdravstenaZastita" Multiplicity="*" />
+    <End Type="SistemZZ_ERModel.DomZdravlja" Role="DomZdravlja" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Doktor" BaseType="SistemZZ_ERModel.ZdravstveniRadnik">
+    <Property Name="SpecDR" Type="String" Nullable="false" />
+    <Property Name="GodDR" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedicinskaSestra" BaseType="SistemZZ_ERModel.ZdravstveniRadnik">
+    <Property Name="GodMS" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="Pruza">
+    <End Type="SistemZZ_ERModel.ZdravstveniRadnik" Role="ZdravstveniRadnik" Multiplicity="*" />
+    <End Type="SistemZZ_ERModel.ZdravstenaZastita" Role="ZdravstenaZastita" Multiplicity="*" />
+  </Association>
+</Schema>

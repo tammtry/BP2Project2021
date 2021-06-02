@@ -50,11 +50,69 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutonomnaPokrajina.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\BaseRepository.cs" />
+    <Compile Include="DAO\IRepository.cs" />
+    <Compile Include="DAO\SistemDAO.cs" />
+    <Compile Include="DijalizaPrevoz.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doktor.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomZdravlja.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedicinskaSestra.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prevoz.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanitetskiPrevoz.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SistemZdravstveneZastite.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SistemZZ_ERModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemZZ_ERModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SistemZZ_ERModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SistemZZ_ERModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SistemZZ_ERModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TipPrevoza.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipZastite.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipZr.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UstanovaAP.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZdravstenaZastita.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZdravstvenaUstanova.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZdravstveniRadnik.cs">
+      <DependentUpon>SistemZZ_ERModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -76,8 +134,15 @@
   <ItemGroup>
     <Content Include="SistemZZ_ERModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SistemZZ_ERModel.Context.cs</LastGenOutput>
+      <DependentUpon>SistemZZ_ERModel.edmx</DependentUpon>
     </Content>
     <Content Include="SistemZZ_ERModel.edmx.sql" />
+    <Content Include="SistemZZ_ERModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SistemZZ_ERModel.cs</LastGenOutput>
+      <DependentUpon>SistemZZ_ERModel.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

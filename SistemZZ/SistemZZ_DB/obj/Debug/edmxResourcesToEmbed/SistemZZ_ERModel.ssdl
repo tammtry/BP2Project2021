@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SistemZZ_ERModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SistemZZ_ERModelStoreContainer">
+    <EntitySet Name="SistemZdravstveneZastite" EntityType="SistemZZ_ERModel.Store.SistemZdravstveneZastite" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZdravstvenaUstanova" EntityType="SistemZZ_ERModel.Store.ZdravstvenaUstanova" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AutonomnaPokrajina" EntityType="SistemZZ_ERModel.Store.AutonomnaPokrajina" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DomZdravlja" EntityType="SistemZZ_ERModel.Store.DomZdravlja" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prevoz" EntityType="SistemZZ_ERModel.Store.Prevoz" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UstanovaAP" EntityType="SistemZZ_ERModel.Store.UstanovaAP" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZdravstenaZastita" EntityType="SistemZZ_ERModel.Store.ZdravstenaZastita" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZdravstveniRadnik" EntityType="SistemZZ_ERModel.Store.ZdravstveniRadnik" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prevoz_SanitetskiPrevoz" EntityType="SistemZZ_ERModel.Store.Prevoz_SanitetskiPrevoz" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Prevoz_DijalizaPrevoz" EntityType="SistemZZ_ERModel.Store.Prevoz_DijalizaPrevoz" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZdravstveniRadnik_Doktor" EntityType="SistemZZ_ERModel.Store.ZdravstveniRadnik_Doktor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ZdravstveniRadnik_MedicinskaSestra" EntityType="SistemZZ_ERModel.Store.ZdravstveniRadnik_MedicinskaSestra" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vrsi" EntityType="SistemZZ_ERModel.Store.Vrsi" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Obezbedjuje" EntityType="SistemZZ_ERModel.Store.Obezbedjuje" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pruza" EntityType="SistemZZ_ERModel.Store.Pruza" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Sastoji" Association="SistemZZ_ERModel.Store.Sastoji">
+      <End Role="SistemZdravstveneZastite" EntitySet="SistemZdravstveneZastite" />
+      <End Role="ZdravstvenaUstanova" EntitySet="ZdravstvenaUstanova" />
+    </AssociationSet>
+    <AssociationSet Name="UstanovaAPZdravstvenaUstanova" Association="SistemZZ_ERModel.Store.Osnovana">
+      <End Role="UstanovaAP" EntitySet="UstanovaAP" />
+      <End Role="ZdravstvenaUstanova" EntitySet="ZdravstvenaUstanova" />
+    </AssociationSet>
+    <AssociationSet Name="AutonomnaPokrajinaUstanovaAP" Association="SistemZZ_ERModel.Store.Osniva">
+      <End Role="AutonomnaPokrajina" EntitySet="AutonomnaPokrajina" />
+      <End Role="UstanovaAP" EntitySet="UstanovaAP" />
+    </AssociationSet>
+    <AssociationSet Name="Upravlja" Association="SistemZZ_ERModel.Store.Upravlja">
+      <End Role="DomZdravlja" EntitySet="DomZdravlja" />
+      <End Role="UstanovaAP" EntitySet="UstanovaAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vrsi_DomZdravlja" Association="SistemZZ_ERModel.Store.FK_Vrsi_DomZdravlja">
+      <End Role="DomZdravlja" EntitySet="DomZdravlja" />
+      <End Role="Vrsi" EntitySet="Vrsi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vrsi_Prevoz" Association="SistemZZ_ERModel.Store.FK_Vrsi_Prevoz">
+      <End Role="Prevoz" EntitySet="Prevoz" />
+      <End Role="Vrsi" EntitySet="Vrsi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Obezbedjuje_ZdravstenaZastita" Association="SistemZZ_ERModel.Store.FK_Obezbedjuje_ZdravstenaZastita">
+      <End Role="ZdravstenaZastita" EntitySet="ZdravstenaZastita" />
+      <End Role="Obezbedjuje" EntitySet="Obezbedjuje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Obezbedjuje_DomZdravlja" Association="SistemZZ_ERModel.Store.FK_Obezbedjuje_DomZdravlja">
+      <End Role="DomZdravlja" EntitySet="DomZdravlja" />
+      <End Role="Obezbedjuje" EntitySet="Obezbedjuje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pruza_ZdravstveniRadnik" Association="SistemZZ_ERModel.Store.FK_Pruza_ZdravstveniRadnik">
+      <End Role="ZdravstveniRadnik" EntitySet="ZdravstveniRadnik" />
+      <End Role="Pruza" EntitySet="Pruza" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pruza_ZdravstenaZastita" Association="SistemZZ_ERModel.Store.FK_Pruza_ZdravstenaZastita">
+      <End Role="ZdravstenaZastita" EntitySet="ZdravstenaZastita" />
+      <End Role="Pruza" EntitySet="Pruza" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SanitetskiPrevoz_inherits_Prevoz" Association="SistemZZ_ERModel.Store.FK_SanitetskiPrevoz_inherits_Prevoz">
+      <End Role="Prevoz" EntitySet="Prevoz" />
+      <End Role="SanitetskiPrevoz" EntitySet="Prevoz_SanitetskiPrevoz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DijalizaPrevoz_inherits_Prevoz" Association="SistemZZ_ERModel.Store.FK_DijalizaPrevoz_inherits_Prevoz">
+      <End Role="Prevoz" EntitySet="Prevoz" />
+      <End Role="DijalizaPrevoz" EntitySet="Prevoz_DijalizaPrevoz" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doktor_inherits_ZdravstveniRadnik" Association="SistemZZ_ERModel.Store.FK_Doktor_inherits_ZdravstveniRadnik">
+      <End Role="ZdravstveniRadnik" EntitySet="ZdravstveniRadnik" />
+      <End Role="Doktor" EntitySet="ZdravstveniRadnik_Doktor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MedicinskaSestra_inherits_ZdravstveniRadnik" Association="SistemZZ_ERModel.Store.FK_MedicinskaSestra_inherits_ZdravstveniRadnik">
+      <End Role="ZdravstveniRadnik" EntitySet="ZdravstveniRadnik" />
+      <End Role="MedicinskaSestra" EntitySet="ZdravstveniRadnik_MedicinskaSestra" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SistemZdravstveneZastite">
+    <Key>
+      <PropertyRef Name="ID_SZZ" />
+    </Key>
+    <Property Name="ID_SZZ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazivSZZ" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DrzavaSZZ" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZdravstvenaUstanova">
+    <Key>
+      <PropertyRef Name="ID_ZU" />
+    </Key>
+    <Property Name="ID_ZU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazivZU" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdresaZU" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BrTelZU" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SistemZdravstveneZastiteID_SZZ" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AutonomnaPokrajina">
+    <Key>
+      <PropertyRef Name="ID_AP" />
+    </Key>
+    <Property Name="ID_AP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NazivAP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PredsAP" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DomZdravlja">
+    <Key>
+      <PropertyRef Name="ID_DZ" />
+    </Key>
+    <Property Name="ID_DZ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdresaDZ" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BrTelDZ" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BrZap" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DirDZ" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UstanovaAP_ZdravstvenaUstanovaID_ZU" Type="int" Nullable="true" />
+    <Property Name="UstanovaAP_AutonomnaPokrajinaID_AP" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Prevoz">
+    <Key>
+      <PropertyRef Name="ID_V" />
+    </Key>
+    <Property Name="ID_V" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImeVozaca" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MarkaVoz" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BrMesta" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipPrevoza" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UstanovaAP">
+    <Key>
+      <PropertyRef Name="ZdravstvenaUstanovaID_ZU" />
+      <PropertyRef Name="AutonomnaPokrajinaID_AP" />
+    </Key>
+    <Property Name="ZdravstvenaUstanovaID_ZU" Type="int" Nullable="false" />
+    <Property Name="AutonomnaPokrajinaID_AP" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZdravstenaZastita">
+    <Key>
+      <PropertyRef Name="ID_ZZ" />
+    </Key>
+    <Property Name="ID_ZZ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipZastite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DrMed" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZdravstveniRadnik">
+    <Key>
+      <PropertyRef Name="ID_ZR" />
+    </Key>
+    <Property Name="ID_ZR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipZR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImeZR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrezimeZR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GodZR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OdeljenjeZR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TelZR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GodZapos" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prevoz_SanitetskiPrevoz">
+    <Key>
+      <PropertyRef Name="ID_V" />
+    </Key>
+    <Property Name="SifraKreveta" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_V" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prevoz_DijalizaPrevoz">
+    <Key>
+      <PropertyRef Name="ID_V" />
+    </Key>
+    <Property Name="SifraKolica" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_V" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZdravstveniRadnik_Doktor">
+    <Key>
+      <PropertyRef Name="ID_ZR" />
+    </Key>
+    <Property Name="SpecDR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GodDR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_ZR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ZdravstveniRadnik_MedicinskaSestra">
+    <Key>
+      <PropertyRef Name="ID_ZR" />
+    </Key>
+    <Property Name="GodMS" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ID_ZR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vrsi">
+    <Key>
+      <PropertyRef Name="DomZdravlja_ID_DZ" />
+      <PropertyRef Name="Prevoz_ID_V" />
+    </Key>
+    <Property Name="DomZdravlja_ID_DZ" Type="int" Nullable="false" />
+    <Property Name="Prevoz_ID_V" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Obezbedjuje">
+    <Key>
+      <PropertyRef Name="ZdravstenaZastita_ID_ZZ" />
+      <PropertyRef Name="DomZdravlja_ID_DZ" />
+    </Key>
+    <Property Name="ZdravstenaZastita_ID_ZZ" Type="int" Nullable="false" />
+    <Property Name="DomZdravlja_ID_DZ" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pruza">
+    <Key>
+      <PropertyRef Name="ZdravstveniRadnik_ID_ZR" />
+      <PropertyRef Name="ZdravstenaZastita_ID_ZZ" />
+    </Key>
+    <Property Name="ZdravstveniRadnik_ID_ZR" Type="int" Nullable="false" />
+    <Property Name="ZdravstenaZastita_ID_ZZ" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Sastoji">
+    <End Role="SistemZdravstveneZastite" Type="SistemZZ_ERModel.Store.SistemZdravstveneZastite" Multiplicity="1" />
+    <End Role="ZdravstvenaUstanova" Type="SistemZZ_ERModel.Store.ZdravstvenaUstanova" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SistemZdravstveneZastite">
+        <PropertyRef Name="ID_SZZ" />
+      </Principal>
+      <Dependent Role="ZdravstvenaUstanova">
+        <PropertyRef Name="SistemZdravstveneZastiteID_SZZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Osnovana">
+    <End Role="UstanovaAP" Type="SistemZZ_ERModel.Store.UstanovaAP" Multiplicity="*" />
+    <End Role="ZdravstvenaUstanova" Type="SistemZZ_ERModel.Store.ZdravstvenaUstanova" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ZdravstvenaUstanova">
+        <PropertyRef Name="ID_ZU" />
+      </Principal>
+      <Dependent Role="UstanovaAP">
+        <PropertyRef Name="ZdravstvenaUstanovaID_ZU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Osniva">
+    <End Role="AutonomnaPokrajina" Type="SistemZZ_ERModel.Store.AutonomnaPokrajina" Multiplicity="1" />
+    <End Role="UstanovaAP" Type="SistemZZ_ERModel.Store.UstanovaAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AutonomnaPokrajina">
+        <PropertyRef Name="ID_AP" />
+      </Principal>
+      <Dependent Role="UstanovaAP">
+        <PropertyRef Name="AutonomnaPokrajinaID_AP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Upravlja">
+    <End Role="DomZdravlja" Type="SistemZZ_ERModel.Store.DomZdravlja" Multiplicity="*" />
+    <End Role="UstanovaAP" Type="SistemZZ_ERModel.Store.UstanovaAP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UstanovaAP">
+        <PropertyRef Name="ZdravstvenaUstanovaID_ZU" />
+        <PropertyRef Name="AutonomnaPokrajinaID_AP" />
+      </Principal>
+      <Dependent Role="DomZdravlja">
+        <PropertyRef Name="UstanovaAP_ZdravstvenaUstanovaID_ZU" />
+        <PropertyRef Name="UstanovaAP_AutonomnaPokrajinaID_AP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vrsi_DomZdravlja">
+    <End Role="DomZdravlja" Type="SistemZZ_ERModel.Store.DomZdravlja" Multiplicity="1" />
+    <End Role="Vrsi" Type="SistemZZ_ERModel.Store.Vrsi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DomZdravlja">
+        <PropertyRef Name="ID_DZ" />
+      </Principal>
+      <Dependent Role="Vrsi">
+        <PropertyRef Name="DomZdravlja_ID_DZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vrsi_Prevoz">
+    <End Role="Vrsi" Type="SistemZZ_ERModel.Store.Vrsi" Multiplicity="*" />
+    <End Role="Prevoz" Type="SistemZZ_ERModel.Store.Prevoz" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Prevoz">
+        <PropertyRef Name="ID_V" />
+      </Principal>
+      <Dependent Role="Vrsi">
+        <PropertyRef Name="Prevoz_ID_V" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Obezbedjuje_ZdravstenaZastita">
+    <End Role="ZdravstenaZastita" Type="SistemZZ_ERModel.Store.ZdravstenaZastita" Multiplicity="1" />
+    <End Role="Obezbedjuje" Type="SistemZZ_ERModel.Store.Obezbedjuje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZdravstenaZastita">
+        <PropertyRef Name="ID_ZZ" />
+      </Principal>
+      <Dependent Role="Obezbedjuje">
+        <PropertyRef Name="ZdravstenaZastita_ID_ZZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Obezbedjuje_DomZdravlja">
+    <End Role="Obezbedjuje" Type="SistemZZ_ERModel.Store.Obezbedjuje" Multiplicity="*" />
+    <End Role="DomZdravlja" Type="SistemZZ_ERModel.Store.DomZdravlja" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="DomZdravlja">
+        <PropertyRef Name="ID_DZ" />
+      </Principal>
+      <Dependent Role="Obezbedjuje">
+        <PropertyRef Name="DomZdravlja_ID_DZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pruza_ZdravstveniRadnik">
+    <End Role="ZdravstveniRadnik" Type="SistemZZ_ERModel.Store.ZdravstveniRadnik" Multiplicity="1" />
+    <End Role="Pruza" Type="SistemZZ_ERModel.Store.Pruza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ZdravstveniRadnik">
+        <PropertyRef Name="ID_ZR" />
+      </Principal>
+      <Dependent Role="Pruza">
+        <PropertyRef Name="ZdravstveniRadnik_ID_ZR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pruza_ZdravstenaZastita">
+    <End Role="Pruza" Type="SistemZZ_ERModel.Store.Pruza" Multiplicity="*" />
+    <End Role="ZdravstenaZastita" Type="SistemZZ_ERModel.Store.ZdravstenaZastita" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ZdravstenaZastita">
+        <PropertyRef Name="ID_ZZ" />
+      </Principal>
+      <Dependent Role="Pruza">
+        <PropertyRef Name="ZdravstenaZastita_ID_ZZ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SanitetskiPrevoz_inherits_Prevoz">
+    <End Role="Prevoz" Type="SistemZZ_ERModel.Store.Prevoz" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SanitetskiPrevoz" Type="SistemZZ_ERModel.Store.Prevoz_SanitetskiPrevoz" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Prevoz">
+        <PropertyRef Name="ID_V" />
+      </Principal>
+      <Dependent Role="SanitetskiPrevoz">
+        <PropertyRef Name="ID_V" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DijalizaPrevoz_inherits_Prevoz">
+    <End Role="Prevoz" Type="SistemZZ_ERModel.Store.Prevoz" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DijalizaPrevoz" Type="SistemZZ_ERModel.Store.Prevoz_DijalizaPrevoz" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Prevoz">
+        <PropertyRef Name="ID_V" />
+      </Principal>
+      <Dependent Role="DijalizaPrevoz">
+        <PropertyRef Name="ID_V" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doktor_inherits_ZdravstveniRadnik">
+    <End Role="ZdravstveniRadnik" Type="SistemZZ_ERModel.Store.ZdravstveniRadnik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Doktor" Type="SistemZZ_ERModel.Store.ZdravstveniRadnik_Doktor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ZdravstveniRadnik">
+        <PropertyRef Name="ID_ZR" />
+      </Principal>
+      <Dependent Role="Doktor">
+        <PropertyRef Name="ID_ZR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MedicinskaSestra_inherits_ZdravstveniRadnik">
+    <End Role="ZdravstveniRadnik" Type="SistemZZ_ERModel.Store.ZdravstveniRadnik" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MedicinskaSestra" Type="SistemZZ_ERModel.Store.ZdravstveniRadnik_MedicinskaSestra" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ZdravstveniRadnik">
+        <PropertyRef Name="ID_ZR" />
+      </Principal>
+      <Dependent Role="MedicinskaSestra">
+        <PropertyRef Name="ID_ZR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
