@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SistemZZ_GUI.Views"
         mc:Ignorable="d"
         Title="HomeView" Height="436.196" Width="590.184">
-    <Grid Background="PaleTurquoise" Margin="0,0,2,2">
+    <Grid Background="Transparent" Margin="0,0,2,2">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="150"></RowDefinition>
@@ -23,10 +23,12 @@
             <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <Image Source="/Images/health.jpg" Grid.Row="0" Grid.ColumnSpan="4" Margin="-10,-72,10,10" Grid.RowSpan="4"/>
         <TextBlock Text="World Healthcare Systems" FontSize="30" FontWeight="Bold" Grid.ColumnSpan="5" Grid.Row="0" Margin="118,30,106,10" HorizontalAlignment="Center" Width="526"></TextBlock>
-        <Button Background="NavajoWhite" Content="SZZ" FontSize="22" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="10" Cursor="Hand"
+
+        <Button Background="Aquamarine" Content="SZZ" FontSize="22" FontWeight="Bold" Grid.Column="1" Grid.Row="1" Margin="10" Cursor="Hand"
                 Command="{Binding ViewSZZCommand}"/>
-        <Button Background="NavajoWhite" Content="ZU" FontSize="22" FontWeight="Bold" Grid.Column="2" Grid.Row="1" Margin="10" Cursor="Hand"
+        <Button Background="Aquamarine" Content="ZU" FontSize="22" FontWeight="Bold" Grid.Column="2" Grid.Row="1" Margin="10" Cursor="Hand"
                 Command="{Binding ViewZUCommand}"/>
 
     </Grid>
