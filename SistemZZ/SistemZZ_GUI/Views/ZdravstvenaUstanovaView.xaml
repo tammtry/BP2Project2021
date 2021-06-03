@@ -29,7 +29,7 @@
             <Button Grid.Row="3" Margin="235,106,87,58" Content="Refresh" FontSize="30" FontWeight="Bold" Cursor="Hand"
                  Command="{Binding RefreshZUCommand}" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-            <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Margin="10,10,87,136" 
+            <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Margin="10,10,10,136" 
                   Foreground="Black" BorderBrush="Transparent" IsReadOnly="True" 
                   SelectionMode="Single" AutoGenerateColumns="False"
                   ItemsSource="{Binding ZdravstveneUstanove, UpdateSourceTrigger=PropertyChanged}"   
@@ -40,6 +40,9 @@
                     <DataGridTextColumn Header="Name" Width="130" Binding="{Binding NazivZU}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Address" Width="120" Binding="{Binding AdresaZU}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Phone number " Width="120" Binding="{Binding BrTelZU}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="SZZ " Width="120" Binding="{Binding  SistemZdravstveneZastiteID_SZZ}"></DataGridTextColumn>
+
+                   
 
                 </DataGrid.Columns>
             </DataGrid>

@@ -27,10 +27,10 @@
 
         <TextBox Width="200" Height="50" Text="{Binding Szz.ID_SZZ}" IsEnabled="{Binding TextBoxEnabled}" Grid.Row="1" Margin="10 0 0 0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22"></TextBox>
         <TextBox Width="200" Height="50" Text="{Binding Szz.NazivSZZ}" Grid.Row="2" Margin="10 0 0 0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22"></TextBox>
-
-        
         <TextBox Width="200" Height="50" Text="{Binding Szz.DrzavaSZZ}" Grid.Row="3" Margin="10 0 0 0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22"></TextBox>
 
+        
+        
         <Button Cursor="Hand" Content="{Binding ButtonContent}" Command="{Binding AddEditSistemZdravstveneZastiteCommand}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Width="150" Height="60"></Button>
         <TextBlock Text="{Binding Completed}" Foreground="Green" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"></TextBlock>
     </Grid>

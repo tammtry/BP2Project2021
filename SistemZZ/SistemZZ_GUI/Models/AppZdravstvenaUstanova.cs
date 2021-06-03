@@ -14,14 +14,16 @@ namespace SistemZZ_GUI.Models
         public string NazivZU { get; set; }
         public string AdresaZU { get; set; }
         public string BrTelZU { get; set; }
-      
+        public int SistemZdravstveneZastiteID_SZZ { get; set; }
+
 
         public AppZdravstvenaUstanova()
         {
             ID_ZU = 0;
             NazivZU = "";
             AdresaZU = "";
-            BrTelZU = "";          
+            BrTelZU = "";
+            SistemZdravstveneZastiteID_SZZ = 0;
         }
 
         public AppZdravstvenaUstanova(ZdravstvenaUstanova zu)
@@ -30,6 +32,7 @@ namespace SistemZZ_GUI.Models
             NazivZU = zu.NazivZU;
             AdresaZU = zu.AdresaZU;
             BrTelZU = zu.BrTelZU;
+            SistemZdravstveneZastiteID_SZZ = zu.SistemZdravstveneZastiteID_SZZ;
         }
 
         protected override void ValidateSelf()

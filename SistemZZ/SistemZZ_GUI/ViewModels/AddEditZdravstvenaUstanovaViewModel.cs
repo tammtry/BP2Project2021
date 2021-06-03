@@ -95,6 +95,7 @@ namespace SistemZZ_GUI.ViewModels
                 addZu.NazivZU = Zu.NazivZU;
                 addZu.AdresaZU = Zu.AdresaZU;
                 addZu.BrTelZU = Zu.BrTelZU;
+                addZu.SistemZdravstveneZastiteID_SZZ = Zu.SistemZdravstveneZastiteID_SZZ;
                 unitOfWork.ZdravstveneUstanove.Add(addZu);
 
                 if (unitOfWork.Complete() > 0)
@@ -116,6 +117,7 @@ namespace SistemZZ_GUI.ViewModels
                 editZu.NazivZU = Zu.NazivZU;
                 editZu.AdresaZU = Zu.AdresaZU;
                 editZu.BrTelZU = Zu.BrTelZU;
+                editZu.SistemZdravstveneZastiteID_SZZ = Zu.SistemZdravstveneZastiteID_SZZ;
 
                 unitOfWork.ZdravstveneUstanove.Update(editZu);
 
